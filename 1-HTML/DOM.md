@@ -1,0 +1,2 @@
+# The Document Object Model (DOM)
+When HTML is retrieved by a web browser, it is parsed and stored as an in-memory representation.  This "living" version of the web page is known as the Document Object Model or DOM.  

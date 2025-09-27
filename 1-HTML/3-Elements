@@ -1,0 +1,31 @@
+# HTML Elements
+## Block Elements
+Block elements in HTML are elements that, by default, start on a new line and take up the full width available. They are used to structure the main parts of a web page, such as headings, paragraphs, lists, and divs. Common block elements include 
+- `<div>` - A generic block element. It has no semantic meaning.
+- `<p>` - A paragraph.  
+- `<h1>`–`<h6>` - headings
+- `<ul>` - Unordered list.  Defaults to bullets in front, but this is configurable
+- `<ol>` - Ordered list.  Defaults to numbers in front, but this is configurable
+- `<li>` - List item.  Used to define each item within a `<ul>` or `<ol>`
+- `<nav>` - Navigation.  Defines that the content contained is used to navigate within the interface or to other pages
+- `<header>` - The visible header of the page.  Commonly contains items such as the top-level heading `<h1>`, site logo/tagline, and primary site navigation
+- `<footer>` - Commonly contains items such as secondary site-wide navigation, copyright statements, or address/phone/contact information
+
+## Inline Elements
+Inline elements are elements that do not start on a new line and only take up as much width as necessary. They are typically used within block elements to describe small portions of content.
+
+Height and Width styles do not apply to inline elements, and spacing styles like margin and padding behave differently than for block elements. (More on this later).
+
+Common inline elements include 
+- `<span>` - A generic inline element.  It has no semantic meaning
+- `<a>` - Anchor.
+- `<strong>` - Strong.  This supercedes the `<b></b>` element from earlier versions of HTML which stood for "bold" and described style, not meaning
+- `<em>` - Emphasis.  This supercedes the `<i></i>` element from earlier versions of HTML which stood for "italic" and described style, not meaning
+- `<br>` - Line break.  This one is commonly confused as a block element because it causes a new line in the document, but it technically does produce an element that takes up the full width of the document.
+  
+
+## Inline-Block Elements
+Some elements, like `<img>`, are considered "inline-block." They do not start on a new line and flow inline with text.  They respect width and height and handle spacing styles like margin and padding similar to block elements.
+
+## Whitespace
+In HTML, white space is ignored

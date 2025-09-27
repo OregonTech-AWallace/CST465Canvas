@@ -1,0 +1,3 @@
+Greetings everyone!  My name is Alan Wallace and I will be your instructor for CST465, Advanced Web Development with ASP.NET. I myself am an Oregon Tech alum.  I graduated from the Software Engineering Technology in 2005, which means I was a student here when the very first version of ASP.NET was released.   After graduating, I was hired to maintain 
+
+Sadly, my brain is not creative in graphical sense.  We will 
