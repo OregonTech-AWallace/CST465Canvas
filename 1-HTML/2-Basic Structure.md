@@ -25,7 +25,7 @@ Not to be confused with a "heading" or "header", the head contains metadata abou
 The title belongs in the document head, but deserves a special callout because it is **required** for the document to be considered valid
 
 ## Body `<body></body>`
-The body is the location to place all document content.
+The body is the location to place all document content.  All visible content should be placed here, but it would be inaccurate say that all content here is visible.
 
 ## The Simplest Valid HTML Document
 ```

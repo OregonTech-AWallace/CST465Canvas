@@ -1,4 +1,11 @@
 # HTML Elements
+Before diving into specific elements, I would like to clarify some terminology.  The terms **element** and **tag** are related and sometimes used interchangeably, but they are not exactly the same.  Let's use the document body we learned about on the last page as an example
+`<body>` is a **tag**. `</body>` is also a **tag**.
+The combination of the two and any content inside comprises the **element**
+
+`<body>All of this together is an element</body>`
+## Void or Self-closing Elements
+While some elements require both an opening and a closing tag, **void elements**, that is to say elements that are not allowed to have content, are self-closing.  The line break element, `<br>` is an example.  It is valid for it, and other void elements to be written with or without a closing `/`, like `<br />`.  You will likely see me doing this out of habit due to past requirements, but typically writing it without the `/` is now preferred.  I will make note of void elements when they are introduced.
 ## Block Elements
 Block elements in HTML are elements that, by default, start on a new line and take up the full width available. They are used to structure the main parts of a web page, such as headings, paragraphs, lists, and divs. Common block elements include 
 - `<div>` - A generic block element. It has no semantic meaning.
@@ -21,11 +28,9 @@ Common inline elements include
 - `<a>` - Anchor.
 - `<strong>` - Strong.  This supercedes the `<b></b>` element from earlier versions of HTML which stood for "bold" and described style, not meaning
 - `<em>` - Emphasis.  This supercedes the `<i></i>` element from earlier versions of HTML which stood for "italic" and described style, not meaning
-- `<br>` - Line break.  This one is commonly confused as a block element because it causes a new line in the document, but it technically does produce an element that takes up the full width of the document.
+- `<br>` - (Void element) Line break.  This one is commonly confused as a block element because it causes a new line in the document, but it technically does produce an element that takes up the full width of the document.
   
 
 ## Inline-Block Elements
-Some elements, like `<img>`, are considered "inline-block." They do not start on a new line and flow inline with text.  They respect width and height and handle spacing styles like margin and padding similar to block elements.
-
-## Whitespace
-In HTML, white space is ignored
+Some elements are considered "inline-block". They do not start on a new line and flow inline with text.  They respect width and height and handle spacing styles like margin and padding similar to block elements.
+- `<img>` (void element) - an image.  Alternate text should **always** be provided for accessibility

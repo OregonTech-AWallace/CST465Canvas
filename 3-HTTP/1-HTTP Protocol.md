@@ -2,12 +2,15 @@
 
 ## What is HTTP?
 
-**HTTP (HyperText Transfer Protocol)** is the foundation of data communication on the World Wide Web. It defines how messages are formatted and transmitted, and how web servers and browsers should respond to various requests.  It lives several layers above the TCP/IP protocol stack in the Application Layer of the OSI 7-layer model
+**HTTP (HyperText Transfer Protocol)** is the foundation of data communication on the World Wide Web. It defines how messages are formatted and transmitted, and how web servers and browsers should respond to various requests.  HTTP 1.1 and 2.0, which are most commonly used on the web currently are based on the TCP protocol.  HTTP 3 is based on UDP.  Most of you are likely taking the Networks class at the same time as the class, so I will focus simply on HTTP and not the differences in their underlying packets.
 
 ## Key Concepts
 
 - **Client-Server Model:** The client (usually a web browser) sends requests to the server, which responds with resources (HTML, images, etc.).
 - **Stateless Protocol:** Each HTTP request is independent; the server does not retain information about previous requests.
+
+## HTTP 1.1 
+The following examples are specific to HTTP 1.1.  Though you may note that HTTP 2 is more modern, we will be exploring HTTP 1.1 instead because many of the basic concepts are the same, but it is much easier for humans to inspect and understand.
 
 ## HTTP Request Structure
 
@@ -50,8 +53,8 @@ Content-Type: text/html
 - **200 OK:** Successful request.
 - **404 Not Found:** Resource not found.
 - **500 Internal Server Error:** Server encountered an error.
-*These are the most common for basic use cases, but there are MANY others
+*These are the most common for basic use cases, but there are **MANY** others
 
 ## Summary
 
-HTTP is a simple, stateless protocol that enables communication between clients and servers on the web. Understanding its basics is essential for web development.
+HTTP is a stateless protocol that enables communication between clients and servers on the web. Understanding its basics is essential for web development.
