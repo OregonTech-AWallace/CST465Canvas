@@ -1,0 +1,3 @@
+If you spend any time working in web development, you will assuredly hear the names of CSS frameworks mentioned.  For a long while Bootstrap was the main player in that arena.  Over the last couple of years a new framework called Tailwind has been gaining massive popularity.  So what exactly are they and how do they work?
+
+A CSS framework is a library of pre-written CSS selectors that you can apply to your HTML in order to get the desired look and feel.  Rather than having to write every single CSS property declaration yourself, you can instead add classes to get the desired outcome

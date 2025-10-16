@@ -1,6 +1,6 @@
-# CSS Variables: Description and Usage
+# CSS Custom Properties (Variables)
 
-CSS variables, also known as custom properties, allow you to store values that can be reused throughout your stylesheet. They make it easier to maintain and update styles, especially for colors, spacing, fonts, and other design tokens.
+CSS Custom Properties are easiest to think of as variables.  They allow you to store values that can be reused throughout your stylesheet. They make it easier to maintain and update styles, especially for colors, spacing, fonts, and other commonly used values.  Custom Properties were not introduced in the CSS specification until after 2012 and did not gain widespread browser support until 2017. 
 
 ## Declaring CSS Variables
 
@@ -34,23 +34,21 @@ body {
 - **Theming:** Easily switch themes by changing variable values.
 - **Inheritance:** Variables can be scoped to elements for context-specific styling.
 
+## Locally Scoped Properties
+While global usage is most common, custom properties can be scoped to any selector
 ## Example
 
 ```css
-:root {
-    --font-size: 18px;
-    --text-color: #222;
-}
 
-h1 {
-    font-size: var(--font-size);
-    color: var(--text-color);
+
+div {
+    --gap: 10px;
+    padding-left: var(--gap);
+    margin-left: var(--gap);
 }
 ```
 
-## Browser Support
 
-CSS variables are supported in all modern browsers.
 
 ## Resources
 

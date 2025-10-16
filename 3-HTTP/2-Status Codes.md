@@ -1,4 +1,5 @@
 # HTTP Status Codes and Meanings
+I don't expect you to memorize these.  These are purely here for your reference to see the wide array of status codes that are available.
 
 ## 1xx: Informational
 - **100 Continue**: Request received, continue process.

@@ -9,10 +9,38 @@
 - **Client-Server Model:** The client (usually a web browser) sends requests to the server, which responds with resources (HTML, images, etc.).
 - **Stateless Protocol:** Each HTTP request is independent; the server does not retain information about previous requests.
 
-## HTTP 1.1 
-The following examples are specific to HTTP 1.1.  Though you may note that HTTP 2 is more modern, we will be exploring HTTP 1.1 instead because many of the basic concepts are the same, but it is much easier for humans to inspect and understand.
+## HTTP Versions
+### 1.1 
+HTTP 1.1 introduced several key features that improved upon its predecessor:
+
+- **Persistent Connections:** Connections are kept open for multiple requests and responses, reducing the overhead of establishing new connections.
+- **Chunked Transfer Encoding:** Allows data to be sent in chunks, enabling the server to start sending a response before knowing its total size.
+- **Host Header:** Enables virtual hosting by allowing multiple domains to share the same IP address.
+- **Additional Methods:** Introduced new HTTP methods like `OPTIONS`, `PUT`, and `DELETE`.
+- **Cache Control:** Provides more granular control over caching with headers like `Cache-Control` and `ETag`.
+- **Content Negotiation:** Allows the client and server to negotiate the best representation of a resource (e.g., language, format).
+
+These features made HTTP 1.1 more efficient and flexible, laying the groundwork for modern web communication.
+
+
+
+### 2.0
+
+HTTP 2.0 introduces several improvements over HTTP 1.1:
+
+- **Multiplexing:** Allows multiple requests and responses to be sent simultaneously over a single connection, reducing latency.
+- **Header Compression:** Uses HPACK compression to reduce the size of HTTP headers, improving performance.
+- **Stream Prioritization:** Enables prioritization of streams, allowing critical resources to load faster.
+- **Binary Protocol:** Unlike HTTP 1.1, which is text-based, HTTP 2.0 uses a binary protocol, making it more efficient to parse and less error-prone.
+- **Server Push:** Allows the server to preemptively send resources to the client before they are requested, improving load times.
+
+These features make HTTP 2.0 faster and more efficient, especially for modern web applications.
+
+### 3.0
+HTTP 3.0 is in the works currently.  The current specification aims to use UDP instead of TCP for connections in order to try and gain even more efficiency. Because it has not reached widespread adoption, we will not be delving in to it.
 
 ## HTTP Request Structure
+Though you may note that HTTP 2 is more modern, we will be exploring HTTP 1.1 in the upcoming examples instead.  This is because many of the basic concepts are the same, but it is much easier for humans to inspect and understand HTTP 1.1.
 
 An HTTP request typically includes:
 - **Request Line:** Specifies the method (GET, POST, etc.), resource URL, and HTTP version.

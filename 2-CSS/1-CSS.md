@@ -4,7 +4,7 @@
 
 ## How to Use CSS
 
-There are three main ways to apply CSS to HTML:
+There are four main ways CSS is applied to HTML:
 
 1. **Inline CSS**  
     Add the `style` attribute directly to HTML elements:
@@ -25,7 +25,7 @@ There are three main ways to apply CSS to HTML:
     ```
 
 3. **External CSS**  
-    Write CSS in a separate `.css` file and link it to your HTML:
+    Write CSS in a separate `.css` file and link it to your HTML.  The file can be given any file name supported by the web browser:
     ```html
     <link rel="stylesheet" href="styles.css">
     ```
@@ -35,6 +35,9 @@ There are three main ways to apply CSS to HTML:
       color: red;
     }
     ```
+
+4. **Browser Default Style Sheet**  
+    Every web browser has a built-in stylesheet that tells it how to render elements by default.  This is how `<strong>` elements are bold by default for example.  Be 
 
 ## Example CSS Rule
 
@@ -47,3 +50,5 @@ h1 {
 ```
 
 This rule styles all `<h1>` elements to have a larger font size, navy color, and centered text.
+
+Be sure to check the Common CSS Properties document for a larger (but still limited) list of properties

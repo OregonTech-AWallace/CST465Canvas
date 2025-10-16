@@ -1,0 +1,3 @@
+**Read Chapters 3 and 4 of "Don't Make Me Think!" **
+
+I'm a big fan of canning.  Searching the internet for resources, a site I've found that has a lot of great information is: https://pickyourown.org . Even though this site was redesigned a few years back, and still has some great information, it is definitely not my favorite site from a usability perspective.  One item that I have used this site for is canning pears.  Based on what you have just read, I want you to find out how to can pears and then explain what went well, what issues you found a long the way and how they could be corrected.

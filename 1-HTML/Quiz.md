@@ -19,7 +19,15 @@
 
 
 1. Who was Trogdor?
-- An animated character who wears a wrestling mask and boxing gloves
-- A man
-- A dragon man
-- **Just a dragon**
+    - An animated character who wears a wrestling mask and boxing gloves
+    - A man
+    - A dragon man
+    - **Just a dragon**
+
+1. If I were creating a web page about my love of certain letters of the alphabet and I wrote:
+```
+I love letters.  In my opinion, b<a but I think d>a.
+```
+I would notice that things didn't output as expected.  Why? How could this be fixed?
+1. Since tables are a great tool for organizing data, they are also the ideal construct for building page layouts.
+    - FALSE

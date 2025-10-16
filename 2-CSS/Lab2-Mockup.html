@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CST465 - Lab 2</title>
+    <style>
+    .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        align-items: left;
+    }
+    .form-grid label{
+        display:block;
+        font-weight:bold;
+    }
+    .form-grid .single{
+        grid-column: span 1;
+    }
+    .form-grid .double{
+        grid-column: span 2;
+    }
+    .form-grid .triple{
+        grid-column: span 3;
+    }
+    </style>
+</head>
+<body>
+    <h1>CST465 - Lab 2</h1>
+    <form>
+        <div class="form-grid">
+            <div class="single">
+                <label for="studentID">Student ID</label>
+                <input type="text" id="studentID" name="studentID" placeholder="918...">
+            </div>
+
+            <div class="double">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div class="single">
+                <label for="emailAddress">Email Address</label>
+                <input type="email" id="emailAddress" name="emailAddress">
+            </div>
+
+            <div class="double">
+                <label for="hobby">Hobby</label>
+                <input type="text" id="hobby" name="hobby">
+            </div>
+
+            <div class="single">
+                <label for="userType">User Type</label>
+                <select id="userType" name="userType">
+                    <option value="student">Student</option>
+                    <option value="faculty">Faculty</option>
+                    <option value="staff">Staff</option>
+                </select>
+            </div>
+
+            <div class="double">
+                <label for="band">Band</label>
+                <input type="text" id="band" name="band">
+            </div>
+
+            <div class="triple">
+                <label for="biography">Biography</label>
+                <textarea id="biography" name="biography" rows="4" style="width:100%;"></textarea>
+            </div>
+
+            <div class="thirds">
+                <label for="coursePrefix">Course Prefix</label>
+                <input type="text" id="coursePrefix" name="coursePrefix">
+            </div>
+
+            <div class="thirds">
+                <label for="courseNumber">Course Number</label>
+                <input type="text" id="courseNumber" name="courseNumber">
+            </div>
+
+            <div class="thirds">
+                <label for="courseDescription">Course Description</label>
+                <textarea id="courseDescription" name="courseDescription" rows="4"></textarea>
+            </div>
+        </div>
+        <input type="hidden" name="Nickname" value="Super Secret Guy" >
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

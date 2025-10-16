@@ -3,7 +3,7 @@
 ## The Document Type Definition (DTD)
 The document type definition is the first line of any HTML document. It specifies the type of document, or more specifically the ruleset by which the document will be parsed/rendered. While the web was still evolving, there were a number of different versions/variations, each with pretty significant differences in what was allowable. Today, there is one standard for use across the web, and that is HTML 5.
 
-```
+```html
 <!DOCTYPE html>
 ```
 
@@ -12,7 +12,7 @@ Although this is the only one you would use at this time, the Document Type Defi
 ## The root element
 Valid XML documents must have a root element, that is, an element that encloses all other elements in the document. For HTML, the root element is simply named html.
 
-```
+```html
 <html lang="en-us"></html>
 ```
 
@@ -28,7 +28,7 @@ The title belongs in the document head, but deserves a special callout because i
 The body is the location to place all document content.  All visible content should be placed here, but it would be inaccurate say that all content here is visible.
 
 ## The Simplest Valid HTML Document
-```
+```html
 <!DOCTYPE html>
 <html lang="en-us">
 <head>

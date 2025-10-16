@@ -6,7 +6,7 @@
 **name:** creates a "bookmark" within a page  
 **target:** specifies the frame in which to open a page  
 Example:  
-`<a href="https://www.oit.edu>Go Owls!</a>`  
+`<a href="https://www.oit.edu">Go Owls!</a>`  
 
 `<a>` Can also be used to create a link that will open the default email application on the client’s system like this:  
 `<a href="mailto:alan.wallace@oit.edu">Email the Instructor</a>`  
@@ -21,6 +21,24 @@ Remember that if you are developing on a UNIX server, the filename link may be c
 `<a href="/admissions">Oregon Tech Admissions</a>`
 
 A word of warning: If your web site’s directory structure changes, you can break your relative links.
+
+## Linking Within a Page
+The anchor element has another use, and that is defining named locations on a page.  This allows for links to jump to a specific location on the same page, or even to a specific location on a different page.  
+### Defining a Location on a Page
+```html
+<h2><a name="About">About</a></h2>
+```
+### Linking to a Named Location
+On the same page:
+```html
+<a href="#About">View information about Oregon Tech</a>
+```
+On a different page:
+```html
+<a href="/some-page.html#About">View information about Oregon Tech</a>
+```
+
+
 
 ## The Image Element `<img>`
 ### Required Attributes
