@@ -1,1 +1,0 @@
-Difference between .NET Framework and .NET Core

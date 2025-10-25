@@ -1,6 +1,4 @@
-Peanut Butter Jelly Time
 
-StrongBad - Trogdor
 
 Star Wars Rap
 
@@ -14,4 +12,3 @@ Cows and Cows and Cows
 
 Internet history powerpoint Rick Roll
 
-Internet Archive - Geocities - My first website https://www.geocities.com/southbeach/lights/5756
