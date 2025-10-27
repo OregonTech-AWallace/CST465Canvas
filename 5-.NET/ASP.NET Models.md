@@ -22,3 +22,5 @@ public class ArmadilloController : Controller
     }
 }
 ```
+
+While there is a lot more that we can do with models, any object is an acceptable model.
