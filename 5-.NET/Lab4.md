@@ -56,12 +56,71 @@ For Lab 4, we're going to build on top of what was already created in Lab 3.
 1. Run the application now, and you should now see your page displayed.
 
 ## Now Let's Build Something
-Download the following two files and place them in your `Models` folder.  
-- [ChoreLaborer.cs](../Files/Lab4/ChoreLaborer.cs)
-- [ChoreWorkforce.cs](../Files/Lab4/ChoreWorkforce.cs)
+Create two new files in your `Models` folder.  You will need to add appropriate namespacing for your project.
 
-Download the following file and place it in your `Views/Home` folder
-- [Laborers.cshtml](../Files/Lab4/Laborers.cshtml)
+ChoreLaborer.cs
+```csharp
+public class ChoreLaborer
+{
+    public string Name {get;set;}
+    public int Age {get;set;}
+    public int Difficulty 
+    {
+        get{
+            return _Difficulty;
+        } 
+        set{
+            if(value < 0)
+            {
+                _Difficulty = 0;
+            }
+            else if(value > 10)
+            {
+                _Difficulty = 10;
+            }
+            else
+            {
+                _Difficulty = value;
+            }
+        }
+    }
+    private int _Difficulty;
+}
+```
+ChoreWorkforce.cs
+```csharp
+
+namespace Lab4.Models;
+
+public class ChoreWorkforce
+{
+    public List<ChoreLaborer> Laborers{get;} = new List<ChoreLaborer>();
+}
+```
+
+
+Add a new file to the `Views/Home` folder.  You will need to adjust the first line based on your namespacing.
+
+Laborers.cshtml
+```html
+@model Lab4.Models.ChoreWorkforce
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Chore Laborers</title>
+    </head>
+    <body>
+        <h1>Chore Laborers</h1>
+        <ul>
+        @foreach(var laborer in Model.Laborers)
+        {
+            <li>@laborer.Name is @laborer.Age years old and ranks a @laborer.Difficulty on the difficulty scale</li>
+        } 
+        </ul>
+    </body>
+</html>
+```
 
 Edit `Controllers/HomeController.cs` and add a new method like the following:
 ```csharp
@@ -109,67 +168,6 @@ In the Laborers method of HomeController, filter the list to only those that are
 Now it's time to introduce some dreaded null values to deal with.  Modify the AddRandomLaborer extension method. If the Difficulty is 10, add 'null' to the collection instead.  If you run your program again, things may end up broken because we will be evaluating properties of a null object in our Where clauses.  Use knowledge gained from the Week 4 content on Dealing with nulls to remedy this.
 
 
-## Implementing this in Django
-Sticking with the theme of Lab 3, we are now going to provide similar functionality in Django.  We will simplify things a bit so that we just get a feel for how Django is different
 
-1. Open the Lab3/djangolab folder in VS Code
-1. Add a file named `models.py` to `Lab3/djangolab/djangolab` and put in this content
-```python
-class ChoreLaborer:
-    def __init__(self, name="", age=0, difficulty=0):
-        self.name = name
-        self.age = age
-        self._difficulty = 0
-        self.difficulty = difficulty  # Use property setter
-    
-    @property
-    def difficulty(self):
-        return self._difficulty
-    
-    @difficulty.setter
-    def difficulty(self, value):
-        if value < 0:
-            self._difficulty = 0
-        elif value > 10:
-            self._difficulty = 10
-        else:
-            self._difficulty = value
-    
-    def __str__(self):
-        return self.name
-
-class ChoreWorkforce:
-    def __init__(self):
-        self.laborers = []
-    
-    def add_laborer(self, laborer):
-        self.laborers.append(laborer)
-```
-1. Add a file named `views.py` to `Lab3/djangolab/djangolab` and put in this content
-```python
-from django.shortcuts import render
-from .models import ChoreLaborer, ChoreWorkforce
-
-def index(request):
-    return render(request, 'chores/index.html')
-
-def laborers(request):
-    # Manually create ChoreLaborer objects
-    workforce = ChoreWorkforce()
-    
-    # Add some sample laborers
-    laborer1 = ChoreLaborer("Alice", 25, 7)
-    laborer2 = ChoreLaborer("Bob", 30, 4)
-    laborer3 = ChoreLaborer("Charlie", 22, 9)
-    
-    workforce.add_laborer(laborer1)
-    workforce.add_laborer(laborer2)
-    workforce.add_laborer(laborer3)
-    
-    context = {
-        'workforce': workforce
-    }
-    return render(request, 'chores/laborers.html', context)
-```
 
 When completed, see me to get your lab checked off.  Then, commit the lab files to your repository push to GitHub.

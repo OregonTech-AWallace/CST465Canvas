@@ -13,6 +13,8 @@ public class Armadillo
 ```
 
 ```csharp
+namespace CST465;
+
 public class ArmadilloController : Controller
 {
     public IActionResult Index()
@@ -23,4 +25,4 @@ public class ArmadilloController : Controller
 }
 ```
 
-While there is a lot more that we can do with models, any object is an acceptable model.
+While there is a lot more that we can do with models, any object is technically an acceptable model.
