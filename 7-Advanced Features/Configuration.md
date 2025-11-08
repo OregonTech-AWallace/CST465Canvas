@@ -15,11 +15,110 @@ While appsettings.json is heavily used convention, configuration can actually be
 - appsettings.json using the JSON configuration provider.
 - A fallback to the host configuration
 
-### Adding Your OWn Configuration Source
+### Adding Your Own Configuration Source
 Because configuration is loaded early in the life-cycle of your application, we must register configuration sources when we are setting up the Web Application builder:
 
+#### JSON File
 ```csharp
-builder.Configuration.AddJsonFile("MyConfiguration.json");
+builder.Configuration.AddJsonFile("StudentConfig.json", optional: false, reloadOnChange: false);
+```
+#### XML File
+```csharp
+builder.Configuration.AddXmlFile("StudentConfig.xml", optional: false, reloadOnChange: false);
+```
+## Accessing Configuration
+```csharp
+public class HomeController : Controller
+{
+    private readonly IConfiguration _Config;
+    public HomeController(IConfiguration config)
+    {
+        _Config = config;
+    }
+    public IActionResult Index()
+    { 
+        return View();
+    }
+}
+```
+We learned about **dependency injection** in the last section, and that is exactly how we're getting access to it.
+
+Let's build a configuration and use it:
+
+`StudentConfig.json`
+```json
+{
+    "StudentConfig": {
+        "Major": "Software Engineering Technology",
+        "FavoriteClass": "CST465",
+        "Campus": "Online"
+    }
+}
 ```
 
-## Accessing Configuration
+`Program.cs`
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+builder.Configuration.AddJsonFile("StudentConfig.json", optional: false, relaodOnChange: false);
+//Other registrations
+var app = builder.Build();
+//Rest middleware/app setup
+```
+`HomeController.cs`
+```csharp
+public class HomeController : Controller
+{
+    private readonly IConfiguration _Config;
+    public HomeController(IConfiguration config)
+    {
+        _Config = config;
+    }
+    public IActionResult Index()
+    {
+        string major = _Config["StudentConfig:Major"]; 
+        return View((object)major);
+    }
+}
+```
+
+As you can see, we were able to access our configuration using the _Config interface, and using an indexer to access the config. Colons are used to access deeper levels of config hierarchy.  While this might be perfectly fine for grabbing one or two settings, it would be very cumbersome if we were storing a lot of config, and also very prone to typing errors.
+
+## Mapping Configuration to a Class
+Fortunately, we have a way to make configuration even easier.  ASP.NET has built-in functionality to allow us to map that JSON file to an object we can use, giving us compile-time checking and intellisense.  Here's how:
+
+`StudentConfig.cs`
+```csharp
+public class StudentConfig
+{
+    public string Major {get;set;}
+    public string FavoriteClass{get;set;}
+    public string Campus {get;set;}
+}
+```
+
+`Program.cs`
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+builder.Configuration.AddJsonFile("StudentConfig.json", optional: false, relaodOnChange: false);
+builder.Services.Configure<StudentConfig>(builder.Configuration.GetSection("StudentConfig"));
+//Other registrations
+var app = builder.Build();
+//Rest middleware/app setup
+```
+`HomeController.cs`
+```csharp
+public class HomeController : Controller
+{
+    private readonly StudentConfig _Config;
+    public HomeController(IOptions<StudentConfig> config)
+    {
+        _Config = config.Value;
+    }
+    public IActionResult Index()
+    {
+        string major = _Config.Major; 
+        return View((object)major);
+    }
+}
+```
+So cool!
