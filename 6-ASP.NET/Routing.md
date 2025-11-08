@@ -20,7 +20,7 @@ The corresponding action
 
 ## Attribute Routing
 
-Attribute routing is a routing mechanism in ASP.NET that allows developers to define routes directly on controller actions using attributes, rather than configuring routes in a central routing table. This approach provides more control and flexibility over URL patterns and makes routing configuration more explicit and maintainable.
+Attribute routing is a routing mechanism in ASP.NET that allows developers to define routes directly on controller actions using attributes, rather than configuring routes in a central routing table. This approach provides more control and flexibility over URL patterns and makes routing configuration more explicit and maintainable. While other routing schemes are by no means deprecated, **attribute routing is typically the recommended approach**
 
 ## Key Features
 
@@ -56,21 +56,22 @@ app.Run();
 Use the `[Route]` attribute to define custom routes:
 
 ```csharp
+[Route("products")]
 public class ProductsController : Controller
 {
-    [Route("products")]
+    [Route("")]
     public IActionResult Index()
     {
         return View();
     }
 
-    [Route("products/{id:int}")]
+    [Route("{id:int}")]
     public IActionResult Details(int id)
     {
         return View();
     }
 
-    [Route("products/create")]
+    [Route("create")]
     [HttpGet]
     public IActionResult Create()
     {
@@ -151,6 +152,4 @@ public class ProductsController : Controller
 - Use meaningful route patterns that reflect your application structure
 - Apply appropriate constraints to validate route parameters
 - Keep routes simple and readable
-- Use controller-level routes for common prefixes
-- Consider route ordering when multiple routes might match
-- Use named routes for complex URL generation scenarios
+

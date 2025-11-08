@@ -21,7 +21,10 @@ public IActionResult Index()
 <!-- View -->
 <h1>@ViewData["Message"]</h1>
 ```
-- Requires casting when reading complex types: `var model = ViewData["Item"] as MyType;`
+**Commplex Types**
+Casting will be required when using types where an implicit "ToString()" will not suffice: 
+
+`var model = ViewData["Item"] as MyType;`
 
 ## ViewBag
 **Type:** dynamic (if you're not familiar, check out [https://www.tutorialsteacher.com/csharp/csharp-dynamic-type](https://www.tutorialsteacher.com/csharp/csharp-dynamic-type))
@@ -41,7 +44,8 @@ public IActionResult Index()
 <!-- View -->
 <h1>@ViewBag.Message</h1>
 ```
-- No compile-time checking (typos and wrong types can cause runtime errors).
+**Complex Types**
+Unlike ViewData, casting is not required with complex types. There is also no compile-time checking, so typos and wrong types can cause runtime errors.
 
 ### Notes and best practices
 - Both are scoped to the `current request` and implemented via the same underlying ViewDataDictionary.

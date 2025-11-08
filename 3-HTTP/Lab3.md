@@ -31,6 +31,7 @@ Creating a virtual environment in Python provides several benefits, especially i
 
 1. Create a new folder in your repository called Lab3
 1. Open a terminal in VS Code or Command Prompt.
+1. Change directories to the Lab3 folder you just created.
 1. Create a virtual environment:
     ```bash
     python -m venv venv

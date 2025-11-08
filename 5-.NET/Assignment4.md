@@ -7,6 +7,7 @@ Sticking with the theme of Lab 3, we are now going to provide similar functional
     ```bash
     python manage.py startapp chores
     ```
+1. Verify that 'chores' is listed in the INSTALLED_APPS section of `settings.py`
 ## Creating the Models
 1. Edit the  `models.py` in `Lab3/djangolab/chores` and put in this content
     ```python
@@ -77,6 +78,12 @@ Sticking with the theme of Lab 3, we are now going to provide similar functional
         path('laborers', views.laborers, name='laborers'),
     ]
     ```
+1. Register the chores-specific `urls.py` in the urlpatterns for the root `urls.py`
+`djangolab/djangolab/urls.py`
+    ```python
+        path('chores/', include('chores.urls')),
+    ```
+
 ## Creating the Templates
 1. Add a new folder named `templates` to the `djangolab/chores` folder
 1. Add a new folder named `chores` to the `djangolab/chores/templates` folder
