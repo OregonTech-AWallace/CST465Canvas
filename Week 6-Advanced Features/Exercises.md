@@ -1,0 +1,1 @@
+If you haven't already attempted to sign up, please try out the article posted in the top section in the course titled, ""

@@ -3,6 +3,14 @@ The below requirements are based on building your project in ASP.NET.
 
 I will also allow those that are interested to build their project in another framework (e.g. Ruby on Rails, Django, PHP, etc.). If that is what you choose to do, some of the requirements, such as where business logic and database calls are allowed, may shift depending on best practices within that framework.
 
+## README.md
+A README.md file should be provided at the root of your project which describes:
+- The purpose of the site
+- Functionality that exists in the site
+- Instructions for running the site.  This should include anything necessary to make the site work including:
+    - Settings and connection strings that need to be configured
+    - How to initialize a new instance of the database if necessary
+
 ## Layout
 - All CSS should be placed in an external stylesheet(s)
 - A layout file will be used to structure your document.
